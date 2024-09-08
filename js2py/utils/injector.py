@@ -132,7 +132,7 @@ def append_arguments(code_obj, new_locals):
                 code_obj.co_nlocals + new_locals_len, code_obj.co_stacksize,
                 code_obj.co_flags, code, code_obj.co_consts, names, varnames,
                 code_obj.co_filename, code_obj.co_name,
-                code_obj.co_firstlineno, code_obj.co_lnotab,
+                code_obj.co_firstlineno, code_obj.co_lines,
                 code_obj.co_freevars, code_obj.co_cellvars)
     else:
         code = bytes(modified)
@@ -140,7 +140,7 @@ def append_arguments(code_obj, new_locals):
                 code_obj.co_nlocals + new_locals_len, code_obj.co_stacksize,
                 code_obj.co_flags, code, code_obj.co_consts, names, varnames,
                 code_obj.co_filename, code_obj.co_name,
-                code_obj.co_firstlineno, code_obj.co_lnotab,
+                code_obj.co_firstlineno, code_obj.co_lines,
                 code_obj.co_freevars, code_obj.co_cellvars)
     # Done modifying codestring - make the code object
     if hasattr(code_obj, "replace"):
